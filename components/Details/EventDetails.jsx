@@ -1,22 +1,17 @@
-import ActionButton from "../ActionButton";
-
-export default async function EventDetails() {
-  
+export default async function EventDetails({ event }) {
   return (
-    <div className="flex items-end">
-      <div className="flex-auto py-4">
-        <h1 className="font-bold text-2xl">Google I/O Extended</h1>
-        <p className="text-[#9C9C9C] text-base mt-1">
-          Rangpur, Dhaka, Bangladesh, Rangpur, Bangladesh
-        </p>
-        <div className="text-[#737373] text-sm mt-1">
-          <span>1k Interested</span>
-          <span>|</span>
-          <span>40K Going</span>
+    <div className="col-span-3">
+      <div className="w-full h-full bg-[#242526] p-6 rounded-lg">
+        <h2 className="font-bold text-2xl">Details</h2>
+        <div className="my-2 text-[#AEAEAE] space-y-4 prose lg:prose-lg max-w-none">
+          <p className="">{event.details}</p>
+
+          <ul className="">
+            {event.swags &&
+              event.swags.map((swag) => <li key={swag}>{swag}</li>)}
+          </ul>
         </div>
       </div>
-
-      <ActionButton action={true} />
     </div>
   );
 }

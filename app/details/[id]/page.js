@@ -8,11 +8,14 @@ export default async function EventDetailsPage({ params: { id } }) {
 
   return (
     <>
+      <Hero event={eventInfo} />
+
       <section className="container">
-        <Hero event={eventInfo} />
-        <EventDetails event={eventInfo} />
+        <div className="grid grid-cols-5 gap-12 my-12">
+          <EventDetails event={eventInfo} />
+          <EventMap event={eventInfo} />
+        </div>
       </section>
-      <EventMap event={eventInfo} />
     </>
   );
 }

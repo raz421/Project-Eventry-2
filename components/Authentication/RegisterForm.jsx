@@ -1,6 +1,8 @@
+import { registerAction } from "@/actions/action";
+
 export default function RegisterForm() {
   return (
-    <form className="login-form">
+    <form className="login-form" action={registerAction}>
       <div>
         <label htmlFor="name">Full Name</label>
         <input type="text" name="name" id="name" />
